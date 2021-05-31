@@ -1,30 +1,40 @@
-NAME = fdf
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I.
-RM = rm -f
-
+INC = /usr/include
+INCLIB = $(INC)/minilibx-linux/lib
 INCLUDES = ft_fdf.h
 
-SRCS = ft_fdf.c\
-		ft_parser.c
+CC = gcc
 
-OBJS = ${SRCS:.c=.o}
+CFLAGS = -Wall -Wextra -Werror -I$(INC) -O3 -Iminilibx-linux -g -Ilibft
 
-$(NAME): $(OBJS) $(INCLUDES)
-	@make -C libft
-	$(CC) $(CFLAGS) $^ libft/libft.a -o $(NAME)
+NAME = fdf
+SRC = ft_fdf.c ft_parser.c ft_draw.c ft_transforms.c ft_utils.c ft_controls.c
+OBJ = $(SRC:%.c=%.o)
+
+LFLAGS = -Lminilibx-linux -lmlx -L$(INCLIB) -lXext -lX11 -lm
+
+UNAME := $(shell uname)
+ifeq ($(UNAME), Darwin)
+	# MacOS
+else
+	#Linux and others...
+	LFLAGS += -lbsd
+endif
 
 all: $(NAME)
 
-norme:
-	norminette *.c *.h
+$(NAME): $(OBJ) $(INCLUDES)
+	@make -C libft
+	@make -C minilibx-linux
+	$(CC) -o $(NAME) $(OBJ) $(LFLAGS) libft/libft.a
 
 clean:
-	$(RM) libft/*.o
-	$(RM) $(OBJS)
+	@make -C minilibx-linux clean
+	@make -C libft clean
+	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) libft/libft.a
+	$(RM) minilibx-linux/libmlx_Linux.a
+	@make -C libft fclean
 	$(RM) $(NAME)
 
 re: clean all

@@ -50,7 +50,8 @@ int	ft_controls(int keycode, t_fdf *data)
 {
 	int	finded;
 
-	finded = ft_controls_system(keycode, data);
+	finded = 0;
+	finded |= ft_controls_system(keycode, data);
 	finded |= ft_controls_transforms(keycode, data);
 	finded |= ft_controls_move(keycode, data);
 	return (finded);

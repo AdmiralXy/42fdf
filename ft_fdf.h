@@ -11,6 +11,28 @@
 # include "mlx.h"
 
 // Constants
+//
+//# define WIN_HEIGHT 1280
+//# define WIN_WIDTH 720
+//# define T_OFFSET 50
+//# define T_HEIGHT 17
+//# define T_COLOR 0xf00000
+//
+// Keys
+//
+//# define KEY_UP 119
+//# define KEY_DOWN 115
+//# define KEY_LEFT 97
+//# define KEY_RIGHT 100
+//# define KEY_EXIT 65307
+//# define KEY_ROTATE_LEFT 113
+//# define KEY_ROTATE_RIGHT 101
+//# define KEY_SCALE_PLUS 122
+//# define KEY_SCALE_MINUS 120
+//# define KEY_HEIGHT_PLUS 102
+//# define KEY_HEIGHT_MINUS 103
+
+// Constants
 
 # define WIN_HEIGHT 1280
 # define WIN_WIDTH 720
@@ -20,17 +42,17 @@
 
 // Keys
 
-# define KEY_UP 119
-# define KEY_DOWN 115
-# define KEY_LEFT 97
-# define KEY_RIGHT 100
-# define KEY_EXIT 65307
-# define KEY_ROTATE_LEFT 113
-# define KEY_ROTATE_RIGHT 101
-# define KEY_SCALE_PLUS 122
-# define KEY_SCALE_MINUS 120
-# define KEY_HEIGHT_PLUS 102
-# define KEY_HEIGHT_MINUS 103
+# define KEY_UP 13
+# define KEY_DOWN 1
+# define KEY_LEFT 0
+# define KEY_RIGHT 2
+# define KEY_EXIT 53
+# define KEY_ROTATE_LEFT 12
+# define KEY_ROTATE_RIGHT 14
+# define KEY_SCALE_PLUS 6
+# define KEY_SCALE_MINUS 7
+# define KEY_HEIGHT_PLUS 3
+# define KEY_HEIGHT_MINUS 5
 
 // Structs
 

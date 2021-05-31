@@ -4,6 +4,7 @@ int	ft_key_mlx(int keycode, t_fdf *data)
 {
 	int	finded;
 
+	printf("Key pressed: %d\n", keycode);
 	finded = ft_controls(keycode, data);
 	if (finded)
 		ft_draw(data, 1);
@@ -17,7 +18,7 @@ int	main(void)
 	data = malloc(sizeof(t_fdf));
 	if (!data)
 		return (0);
-	if (!ft_parser("/home/kricky/CLionProjects/fdf/test_maps/mars.fdf", data))
+	if (!ft_parser("/Users/kricky/Desktop/42fdf/test_maps/42.fdf", data))
 	{
 		free(data);
 		return (0);
