@@ -18,7 +18,8 @@ int	main(void)
 	data = malloc(sizeof(t_fdf));
 	if (!data)
 		return (0);
-	if (!ft_parser("/Users/kricky/Desktop/42fdf/test_maps/42.fdf", data))
+	///Users/kricky/Desktop/42fdf/test_maps/42.fdf
+	if (!ft_parser("/home/kricky/CLionProjects/fdf/test_maps/42.fdf", data))
 	{
 		free(data);
 		return (0);

@@ -15,7 +15,7 @@ void 	ft_clear_map(int **map, t_fdf *data)
 
 void	ft_init_fdf(t_fdf *data)
 {
-	data->elevate = 0;
+	data->shift_z = 1;
 	data->scale = 22;
 	data->angle = M_PI / 3;
 	data->shift_x = WIN_HEIGHT / 3;
@@ -40,7 +40,7 @@ void	ft_render_text(t_fdf *data)
 	ft_putstr_mlx("W/A/S/D - Move", 0, data);
 	ft_putstr_mlx("Q/E - Rotate", 0, data);
 	ft_putstr_mlx("Z/X - Scaling", 0, data);
-	ft_putstr_mlx("F/G - Elevate Heights", 0, data);
+	ft_putstr_mlx("F/G - Shift Heights", 0, data);
 	ft_putstr_mlx("ESC - Exit", 0, data);
 }
 

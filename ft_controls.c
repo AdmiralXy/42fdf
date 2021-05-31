@@ -24,9 +24,9 @@ int	ft_controls_transforms(int keycode, t_fdf *data)
 	if (keycode == KEY_ROTATE_RIGHT && ++finded)
 		data->angle -= M_PI / 16;
 	if (keycode == KEY_HEIGHT_PLUS && ++finded)
-		data->elevate++;
+		data->shift_z++;
 	if (keycode == KEY_HEIGHT_MINUS && ++finded)
-		data->elevate--;
+		data->shift_z--;
 	return (finded);
 }
 
