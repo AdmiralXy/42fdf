@@ -1,0 +1,4 @@
+*.o
+fdf
+# Project exclude paths
+/cmake-build-debug/

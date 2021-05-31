@@ -1,0 +1,30 @@
+NAME = fdf
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror -I.
+RM = rm -f
+
+INCLUDES = ft_fdf.h
+
+SRCS = ft_fdf.c\
+		ft_parser.c
+
+OBJS = ${SRCS:.c=.o}
+
+$(NAME): $(OBJS) $(INCLUDES)
+	@make -C libft
+	$(CC) $(CFLAGS) $^ libft/libft.a -o $(NAME)
+
+all: $(NAME)
+
+norme:
+	norminette *.c *.h
+
+clean:
+	$(RM) libft/*.o
+	$(RM) $(OBJS)
+
+fclean: clean
+	$(RM) libft/libft.a
+	$(RM) $(NAME)
+
+re: clean all
