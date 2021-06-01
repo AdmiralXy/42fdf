@@ -46,6 +46,18 @@ int	ft_controls_move(int keycode, t_fdf *data)
 	return (finded);
 }
 
+int	ft_controls_proj(int keycode, t_fdf *data)
+{
+	int	finded;
+
+	finded = 0;
+	if (keycode == KEY_PROJ_DEF && ++finded)
+		data->proj = 0;
+	if (keycode == KEY_PROJ_ISO && ++finded)
+		data->proj = 1;
+	return (finded);
+}
+
 int	ft_controls(int keycode, t_fdf *data)
 {
 	int	finded;
@@ -54,5 +66,6 @@ int	ft_controls(int keycode, t_fdf *data)
 	finded |= ft_controls_system(keycode, data);
 	finded |= ft_controls_transforms(keycode, data);
 	finded |= ft_controls_move(keycode, data);
+	finded |= ft_controls_proj(keycode, data);
 	return (finded);
 }

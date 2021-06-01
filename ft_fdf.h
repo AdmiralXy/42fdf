@@ -31,6 +31,8 @@
 # define KEY_SCALE_MINUS 120
 # define KEY_HEIGHT_PLUS 102
 # define KEY_HEIGHT_MINUS 103
+# define KEY_PROJ_DEF 112
+# define KEY_PROJ_ISO 105
 
 // Keys
 
@@ -61,6 +63,7 @@ typedef struct s_fdf
 	int		**map;
 	int		scale;
 	float	angle;
+	int 	proj;
 	int		shift_x;
 	int		shift_y;
 	int		shift_z;
@@ -77,8 +80,5 @@ void	ft_transforms(t_point *p1, t_point *p2, t_fdf *data);
 void	ft_render_text(t_fdf *data);
 void	ft_init_fdf(t_fdf *data);
 void	ft_exit(t_fdf *data);
-void	ft_rotate_x(t_point *point, int *z, t_fdf *data);
-void	ft_rotate_y(t_point *point, int *z, t_fdf *data);
-void	ft_rotate_z(t_point *point, int *z, t_fdf *data);
 
 #endif

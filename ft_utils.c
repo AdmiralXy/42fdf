@@ -15,11 +15,12 @@ void 	ft_clear_map(int **map, t_fdf *data)
 
 void	ft_init_fdf(t_fdf *data)
 {
-	data->shift_z = 1;
+	data->proj = 1;
 	data->scale = 22;
 	data->angle = M_PI / 3;
 	data->shift_x = WIN_HEIGHT / 3;
 	data->shift_y = WIN_WIDTH / 3;
+	data->shift_z = 1;
 	data->mlx = mlx_init();
 	data->mlx_win = mlx_new_window(data->mlx, WIN_HEIGHT, WIN_WIDTH, "42FDF");
 }
