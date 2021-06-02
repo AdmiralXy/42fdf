@@ -51,7 +51,7 @@ int	ft_init_fdf(t_fdf *data)
 	return (1);
 }
 
-int	ft_get_height_color(t_point *p1, t_point *p2, t_fdf *data)
+int	ft_get_line_color(t_point *p1, t_point *p2, t_fdf *data)
 {
 	int	z1;
 	int	z2;

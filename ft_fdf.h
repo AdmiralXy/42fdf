@@ -81,7 +81,7 @@ void	ft_transforms(t_point *p1, t_point *p2, t_fdf *data);
 void	ft_render_text(t_fdf *data);
 int		ft_init_fdf(t_fdf *data);
 int		**ft_calloc_2d(int n_rows, int n_cols);
-int		ft_get_height_color(t_point *p1, t_point *p2, t_fdf *data);
+int		ft_get_line_color(t_point *p1, t_point *p2, t_fdf *data);
 void	ft_exit(t_fdf *data);
 
 #endif
