@@ -7,5 +7,5 @@ include_directories(libft)
 
 include_directories(minilibx-linux)
 
-add_executable(fdf ft_fdf.c ft_parser.c ft_draw.c ft_transforms.c ft_controls.c ft_utils.c)
+add_executable(fdf ft_fdf.c ft_parser.c ft_draw.c ft_transforms.c ft_controls.c ft_utils.c ft_draw_text.c)
 target_link_libraries(fdf libft)

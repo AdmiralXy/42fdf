@@ -1,5 +1,26 @@
 #include "ft_fdf.h"
 
+int	**ft_calloc_2d(int n_rows, int n_cols)
+{
+	int	**p;
+	int	i;
+
+	i = 0;
+	p = ft_calloc(n_rows, sizeof(int *));
+	if (!p)
+		return (0);
+	while (i < n_rows)
+	{
+		p[i] = ft_calloc(n_cols, sizeof(int));
+		if (!p[i])
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (p);
+}
+
 void 	ft_clear_map(int **map, t_fdf *data)
 {
 	int	i;
@@ -13,7 +34,7 @@ void 	ft_clear_map(int **map, t_fdf *data)
 	free(map);
 }
 
-void	ft_init_fdf(t_fdf *data)
+int	ft_init_fdf(t_fdf *data)
 {
 	data->proj = 1;
 	data->scale = 22;
@@ -22,27 +43,24 @@ void	ft_init_fdf(t_fdf *data)
 	data->shift_y = WIN_WIDTH / 3;
 	data->shift_z = 1;
 	data->mlx = mlx_init();
+	if (!data->mlx)
+		return (0);
 	data->mlx_win = mlx_new_window(data->mlx, WIN_HEIGHT, WIN_WIDTH, "42FDF");
+	if (!data->mlx_win)
+		return (0);
+	return (1);
 }
 
-void	ft_putstr_mlx(char *str, int start, t_fdf *data)
+int	ft_get_height_color(t_point *p1, t_point *p2, t_fdf *data)
 {
-	static int	height;
+	int	z1;
+	int	z2;
 
-	if (!height || start)
-		height = T_OFFSET;
-	height += T_HEIGHT;
-	mlx_string_put(data->mlx, data->mlx_win, T_OFFSET, height, T_COLOR, str);
-}
-
-void	ft_render_text(t_fdf *data)
-{
-	ft_putstr_mlx("Controls:", 1, data);
-	ft_putstr_mlx("W/A/S/D - Move", 0, data);
-	ft_putstr_mlx("Q/E - Rotate", 0, data);
-	ft_putstr_mlx("Z/X - Scaling", 0, data);
-	ft_putstr_mlx("F/G - Shift Heights", 0, data);
-	ft_putstr_mlx("ESC - Exit", 0, data);
+	z1 = data->map[p1->y][p1->x];
+	z2 = data->map[p2->y][p2->x];
+	if (z1 || z2)
+		return (0xff0000);
+	return (0xffffff);
 }
 
 void	ft_exit(t_fdf *data)

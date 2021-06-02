@@ -11,7 +11,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I$(INC) -g -Ilibft
 
 NAME = fdf
-SRCS = ft_fdf.c ft_parser.c ft_draw.c ft_transforms.c ft_utils.c ft_controls.c
+SRCS = ft_fdf.c ft_parser.c ft_draw.c ft_transforms.c ft_utils.c ft_controls.c ft_draw_text.c
 OBJS = $(SRCS:%.c=%.o)
 
 UNAME := $(shell uname)
@@ -49,3 +49,7 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: clean all
+
+norme:
+	norminette $(SRCS) ft_fdf.h
+	norminette libft/*.c libft/*.h

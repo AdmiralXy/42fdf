@@ -8,9 +8,7 @@ int	ft_valid_file(char *file_path)
 	line = 0;
 	fd = open(file_path, O_RDONLY);
 	while (get_next_line(fd, &line) > 0)
-	{
 		free(line);
-	}
 	close(fd);
 	if (line)
 		free(line);
@@ -52,6 +50,7 @@ int	ft_get_height(char *file_path)
 		counter++;
 		free(line);
 	}
+	counter++;
 	free(line);
 	close(fd);
 	return (counter);
@@ -81,12 +80,11 @@ int	ft_parser(char *file_path, t_fdf *data)
 
 	if (!ft_valid_file(file_path))
 		return (0);
-	i = 0;
-	data->height = ft_get_height(file_path) + 1;
+	data->height = ft_get_height(file_path);
 	data->width = ft_get_width(file_path);
-	data->map = ft_calloc((data->height + 1), sizeof(int *));
-	while (i < data->height)
-		data->map[i++] = ft_calloc((data->width), sizeof(int));
+	data->map = ft_calloc_2d(data->height, data->width);
+	if (!data->map)
+		return (0);
 	i = 0;
 	line = 0;
 	fd = open(file_path, O_RDONLY);

@@ -37,6 +37,7 @@ void	ft_transforms(t_point *p1, t_point *p2, t_fdf *data)
 	int	z2;
 	int	shift_z;
 
+	data->color = ft_get_height_color(p1, p2, data);
 	shift_z = data->shift_z;
 	z1 = data->map[p1->y][p1->x] * shift_z;
 	z2 = data->map[p2->y][p2->x] * shift_z;

@@ -61,9 +61,10 @@ typedef struct s_fdf
 	int		width;
 	int		height;
 	int		**map;
+	int		color;
 	int		scale;
 	float	angle;
-	int 	proj;
+	int		proj;
 	int		shift_x;
 	int		shift_y;
 	int		shift_z;
@@ -78,7 +79,9 @@ void	ft_draw(t_fdf *data, int init);
 int		ft_controls(int keycode, t_fdf *data);
 void	ft_transforms(t_point *p1, t_point *p2, t_fdf *data);
 void	ft_render_text(t_fdf *data);
-void	ft_init_fdf(t_fdf *data);
+int		ft_init_fdf(t_fdf *data);
+int		**ft_calloc_2d(int n_rows, int n_cols);
+int		ft_get_height_color(t_point *p1, t_point *p2, t_fdf *data);
 void	ft_exit(t_fdf *data);
 
 #endif
