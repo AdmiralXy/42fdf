@@ -11,8 +11,8 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I$(INC) -g -Ilibft
 
 NAME = fdf
-SRC = ft_fdf.c ft_parser.c ft_draw.c ft_transforms.c ft_utils.c ft_controls.c
-OBJ = $(SRC:%.c=%.o)
+SRCS = ft_fdf.c ft_parser.c ft_draw.c ft_transforms.c ft_utils.c ft_controls.c
+OBJS = $(SRCS:%.c=%.o)
 
 UNAME := $(shell uname)
 ifeq ($(UNAME), Darwin)
@@ -27,26 +27,24 @@ endif
 %.o: %.c $(INCLUDES)
 	$(CC) $(CFLAGS) -c $<
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJS)
 	@make -C libft
 ifneq ($(UNAME), Darwin)
 	@make -C minilibx-linux
 endif
-	$(CC) -o $(NAME) $(OBJ) $(LFLAGS) libft/libft.a
+	$(CC) -o $(NAME) $(OBJS) $(LFLAGS) libft/libft.a
 
 all: $(NAME)
 
 clean:
-ifneq ($(UNAME), Darwin)
+	@make -C minilibx_macos clean
 	@make -C minilibx-linux clean
-endif
 	@make -C libft clean
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
-ifneq ($(UNAME), Darwin)
+	@make -C minilibx_macos clean
 	$(RM) minilibx-linux/libmlx_Linux.a
-endif
 	@make -C libft fclean
 	$(RM) $(NAME)
 
