@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/kricky/Desktop/42fdf/ft_controls.c" "/Users/kricky/Desktop/42fdf/cmake-build-release/CMakeFiles/fdf.dir/ft_controls.c.o"
   "/Users/kricky/Desktop/42fdf/ft_draw.c" "/Users/kricky/Desktop/42fdf/cmake-build-release/CMakeFiles/fdf.dir/ft_draw.c.o"
+  "/Users/kricky/Desktop/42fdf/ft_draw_text.c" "/Users/kricky/Desktop/42fdf/cmake-build-release/CMakeFiles/fdf.dir/ft_draw_text.c.o"
   "/Users/kricky/Desktop/42fdf/ft_fdf.c" "/Users/kricky/Desktop/42fdf/cmake-build-release/CMakeFiles/fdf.dir/ft_fdf.c.o"
   "/Users/kricky/Desktop/42fdf/ft_parser.c" "/Users/kricky/Desktop/42fdf/cmake-build-release/CMakeFiles/fdf.dir/ft_parser.c.o"
   "/Users/kricky/Desktop/42fdf/ft_transforms.c" "/Users/kricky/Desktop/42fdf/cmake-build-release/CMakeFiles/fdf.dir/ft_transforms.c.o"

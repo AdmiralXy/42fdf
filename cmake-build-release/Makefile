@@ -196,6 +196,33 @@ ft_draw.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_draw.c.s
 .PHONY : ft_draw.c.s
 
+ft_draw_text.o: ft_draw_text.c.o
+
+.PHONY : ft_draw_text.o
+
+# target to build an object file
+ft_draw_text.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_draw_text.c.o
+.PHONY : ft_draw_text.c.o
+
+ft_draw_text.i: ft_draw_text.c.i
+
+.PHONY : ft_draw_text.i
+
+# target to preprocess a source file
+ft_draw_text.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_draw_text.c.i
+.PHONY : ft_draw_text.c.i
+
+ft_draw_text.s: ft_draw_text.c.s
+
+.PHONY : ft_draw_text.s
+
+# target to generate assembly for a file
+ft_draw_text.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/fdf.dir/build.make CMakeFiles/fdf.dir/ft_draw_text.c.s
+.PHONY : ft_draw_text.c.s
+
 ft_fdf.o: ft_fdf.c.o
 
 .PHONY : ft_fdf.o
@@ -319,6 +346,9 @@ help:
 	@echo "... ft_draw.o"
 	@echo "... ft_draw.i"
 	@echo "... ft_draw.s"
+	@echo "... ft_draw_text.o"
+	@echo "... ft_draw_text.i"
+	@echo "... ft_draw_text.s"
 	@echo "... ft_fdf.o"
 	@echo "... ft_fdf.i"
 	@echo "... ft_fdf.s"

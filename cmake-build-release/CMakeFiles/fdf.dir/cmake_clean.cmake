@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/fdf.dir/ft_controls.c.o"
   "CMakeFiles/fdf.dir/ft_draw.c.o"
+  "CMakeFiles/fdf.dir/ft_draw_text.c.o"
   "CMakeFiles/fdf.dir/ft_fdf.c.o"
   "CMakeFiles/fdf.dir/ft_parser.c.o"
   "CMakeFiles/fdf.dir/ft_transforms.c.o"

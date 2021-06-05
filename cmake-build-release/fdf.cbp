@@ -88,6 +88,9 @@
 		<Unit filename="/Users/kricky/Desktop/42fdf/ft_draw.c">
 			<Option target="fdf"/>
 		</Unit>
+		<Unit filename="/Users/kricky/Desktop/42fdf/ft_draw_text.c">
+			<Option target="fdf"/>
+		</Unit>
 		<Unit filename="/Users/kricky/Desktop/42fdf/ft_fdf.c">
 			<Option target="fdf"/>
 		</Unit>
