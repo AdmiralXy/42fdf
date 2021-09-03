@@ -6,8 +6,7 @@
 #   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        #
 #                                                +#+#+#+#+#+   +#+           #
 #   Created: 2021/09/03 15:13:50 by                   #+#    #+#             #
-#   Updated: 2021/09/03 15:13:50 by                  ###   ########.fr       #
-#                                                                            #
+#   Updated: 202#   Updated: 2021/09/03 15:21:03 by                  ###   ########.fr       #                                                              #
 # ************************************************************************** #
 
 INC = /usr/include
@@ -42,7 +41,10 @@ endif
 $(NAME): $(OBJS)
 	@make -C libft
 ifneq ($(UNAME), Darwin)
+	cp ft_fdf_linux.h ft_fdf.h
 	@make -C minilibx-linux
+else
+	cp ft_fdf_macos.h ft_fdf.h
 endif
 	$(CC) -o $(NAME) $(OBJS) $(LFLAGS) libft/libft.a
 
@@ -52,6 +54,7 @@ clean:
 	@make -C minilibx_macos clean
 	@make -C minilibx-linux clean
 	@make -C libft clean
+	$(RM) ft_fdf.h
 	$(RM) $(OBJS)
 
 fclean: clean
