@@ -18,8 +18,9 @@ int	main(void)
 	data = malloc(sizeof(t_fdf));
 	if (!data)
 		return (0);
-	if (!ft_parser("/home/kricky/CLionProjects/fdf/test_maps/42.fdf", data))
+	if (!ft_parser("/home/kricky/CLionProjects/42fdf/maps/elem-fract.fdf", data))
 	{
+		printf("no map\n");
 		free(data);
 		return (0);
 	}
