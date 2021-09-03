@@ -29,5 +29,6 @@ void	ft_render_text(t_fdf *data)
 	ft_putstr_mlx("Q/E - Rotate", 0, data);
 	ft_putstr_mlx("Z/X - Scaling", 0, data);
 	ft_putstr_mlx("F/G - Shift Heights", 0, data);
+	ft_putstr_mlx("I/P - Change projection", 0, data);
 	ft_putstr_mlx("ESC - Exit", 0, data);
 }
