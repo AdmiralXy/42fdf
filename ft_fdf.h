@@ -6,11 +6,9 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:28 by                   #+#    #+#             */
-/*   Updated: 2021/09/03 17:05:18 by                  ###   ########.fr       */
+/*   Updated: 2021/09/04 00:26:01 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// Linux Header File
 
 #ifndef FT_FDF_H
 # define FT_FDF_H
@@ -34,35 +32,33 @@
 
 // Keys
 
-#if __linux__
-# define KEY_UP 119
-# define KEY_DOWN 115
-# define KEY_LEFT 97
-# define KEY_RIGHT 100
-# define KEY_EXIT 65307
-# define KEY_ROTATE_LEFT 113
-# define KEY_ROTATE_RIGHT 101
-# define KEY_SCALE_PLUS 122
-# define KEY_SCALE_MINUS 120
-# define KEY_HEIGHT_PLUS 102
-# define KEY_HEIGHT_MINUS 103
-# define KEY_PROJ_DEF 112
-# define KEY_PROJ_ISO 105
-#elif __APPLE__
-# define KEY_UP 13
-# define KEY_DOWN 1
-# define KEY_LEFT 0
-# define KEY_RIGHT 2
-# define KEY_EXIT 53
-# define KEY_ROTATE_LEFT 12
-# define KEY_ROTATE_RIGHT 14
-# define KEY_SCALE_PLUS 6
-# define KEY_SCALE_MINUS 7
-# define KEY_HEIGHT_PLUS 3
-# define KEY_HEIGHT_MINUS 5
-#else
-#error Platform not supported
-#endif
+# if __APPLE__
+#  define KEY_UP 13
+#  define KEY_DOWN 1
+#  define KEY_LEFT 0
+#  define KEY_RIGHT 2
+#  define KEY_EXIT 53
+#  define KEY_ROTATE_LEFT 12
+#  define KEY_ROTATE_RIGHT 14
+#  define KEY_SCALE_PLUS 6
+#  define KEY_SCALE_MINUS 7
+#  define KEY_HEIGHT_PLUS 3
+#  define KEY_HEIGHT_MINUS 5
+# else
+#  define KEY_UP 119
+#  define KEY_DOWN 115
+#  define KEY_LEFT 97
+#  define KEY_RIGHT 100
+#  define KEY_EXIT 65307
+#  define KEY_ROTATE_LEFT 113
+#  define KEY_ROTATE_RIGHT 101
+#  define KEY_SCALE_PLUS 122
+#  define KEY_SCALE_MINUS 120
+#  define KEY_HEIGHT_PLUS 102
+#  define KEY_HEIGHT_MINUS 103
+#  define KEY_PROJ_DEF 112
+#  define KEY_PROJ_ISO 105
+# endif
 
 // Structs
 
