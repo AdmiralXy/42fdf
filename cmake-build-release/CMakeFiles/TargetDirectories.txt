@@ -1,3 +1,0 @@
-/Users/kricky/Desktop/42fdf/cmake-build-release/CMakeFiles/rebuild_cache.dir
-/Users/kricky/Desktop/42fdf/cmake-build-release/CMakeFiles/edit_cache.dir
-/Users/kricky/Desktop/42fdf/cmake-build-release/CMakeFiles/fdf.dir
