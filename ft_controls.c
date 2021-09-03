@@ -72,12 +72,12 @@ int	ft_controls_proj(int keycode, t_fdf *data)
 
 int	ft_controls(int keycode, t_fdf *data)
 {
-	int	finded;
+	int	key_exists;
 
-	finded = 0;
-	finded |= ft_controls_system(keycode, data);
-	finded |= ft_controls_transforms(keycode, data);
-	finded |= ft_controls_move(keycode, data);
-	finded |= ft_controls_proj(keycode, data);
-	return (finded);
+	key_exists = 0;
+	key_exists |= ft_controls_system(keycode, data);
+	key_exists |= ft_controls_transforms(keycode, data);
+	key_exists |= ft_controls_move(keycode, data);
+	key_exists |= ft_controls_proj(keycode, data);
+	return (key_exists);
 }

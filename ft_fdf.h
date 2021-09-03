@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:28 by                   #+#    #+#             */
-/*   Updated: 2021/09/04 00:26:01 by                  ###   ########.fr       */
+/*   Updated: 2021/09/04 00:26:28 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ int		ft_init_fdf(t_fdf *data);
 int		**ft_calloc_2d(int n_rows, int n_cols);
 int		ft_get_line_color(t_point *p1, t_point *p2, t_fdf *data);
 void	ft_exit(t_fdf *data);
+int		ft_get_max_height(t_fdf *data);
 
 #endif

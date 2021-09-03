@@ -6,11 +6,33 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:44 by                   #+#    #+#             */
-/*   Updated: 2021/09/04 01:09:18 by                  ###   ########.fr       */
+/*   Updated: 2021/09/04 01:20:41 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fdf.h"
+
+int	ft_get_max_height(t_fdf *data)
+{
+	int	i;
+	int	j;
+	int	max;
+
+	max = -2147483648;
+	i = 0;
+	while (i < data->height)
+	{
+		j = 0;
+		while (j < data->width)
+		{
+			if (data->map[i][j] > max)
+				max = data->map[i][j];
+			j++;
+		}
+		i++;
+	}
+	return (max);
+}
 
 int	**ft_calloc_2d(int n_rows, int n_cols)
 {
@@ -61,22 +83,6 @@ int	ft_init_fdf(t_fdf *data)
 	if (!data->mlx_win)
 		return (0);
 	return (1);
-}
-
-int	ft_get_line_color(t_point *p1, t_point *p2, t_fdf *data)
-{
-	int	z1;
-	int	z2;
-
-	z1 = data->map[p1->y][p1->x];
-	z2 = data->map[p2->y][p2->x];
-	if (z1 > z2)
-		return (0xff0000);
-	if (z1 < z2)
-		return (0x0000ff);
-	if (z1 > 0)
-		return (0xff00ae);
-	return (0xffffff);
 }
 
 void	ft_exit(t_fdf *data)
