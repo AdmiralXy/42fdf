@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:21 by                   #+#    #+#             */
-/*   Updated: 2021/09/03 15:14:22 by                  ###   ########.fr       */
+/*   Updated: 2021/09/03 15:47:14 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,41 @@ int	ft_key_mlx(int keycode, t_fdf *data)
 {
 	int	finded;
 
-	printf("Key pressed: %d\n", keycode);
+	ft_putstr_fd("Key pressed: ", 1);
+	ft_putnbr_fd(keycode, 1);
+	ft_putendl_fd("", 1);
 	finded = ft_controls(keycode, data);
 	if (finded)
 		ft_draw(data, 1);
-	return (0);
+	return (EXIT_SUCCESS);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	t_fdf	*data;
+	t_fdf *data;
 
+	if (argc != 2)
+	{
+		ft_putendl_fd("Please specify the path to the map!", 1);
+		return (EXIT_FAILURE);
+	}
 	data = malloc(sizeof(t_fdf));
 	if (!data)
-		return (0);
-	if (!ft_parser(
-			"/home/kricky/CLionProjects/42fdf/maps/elem-fract.fdf", data))
+		return (EXIT_FAILURE);
+	if (!ft_parser(argv[1], data))
 	{
-		printf("no map\n");
+		ft_putendl_fd("Map not found or has invalid format!", 1);
 		free(data);
-		return (0);
+		return (EXIT_FAILURE);
 	}
 	if (!ft_init_fdf(data))
-		return (0);
+	{
+		free(data);
+		return (EXIT_FAILURE);
+	}
 	ft_draw(data, 0);
 	mlx_do_key_autorepeaton(data->mlx);
 	mlx_key_hook(data->mlx_win, ft_key_mlx, data);
 	mlx_loop(data->mlx);
-	return (0);
+	return (EXIT_SUCCESS);
 }

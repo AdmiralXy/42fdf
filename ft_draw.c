@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:07 by                   #+#    #+#             */
-/*   Updated: 2021/09/03 15:19:26 by                  ###   ########.fr       */
+/*   Updated: 2021/09/03 16:01:37 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	ft_draw(t_fdf *data, int clear)
 		mlx_clear_window(data->mlx, data->mlx_win);
 	ft_render_text(data);
 	y = 0;
+	mlx_string_put(data->mlx, data->mlx_win, 50, 667, T_COLOR, "Loading: ");
 	while (y < data->height)
 	{
 		x = 0;
@@ -79,4 +80,6 @@ void	ft_draw(t_fdf *data, int clear)
 		}
 		y++;
 	}
+	mlx_string_put(data->mlx, data->mlx_win, 50, 667, T_COLOR, "Loading: ");
+	mlx_string_put(data->mlx, data->mlx_win, 105, 667, T_COLOR, "completed");
 }

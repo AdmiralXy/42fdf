@@ -40,7 +40,6 @@ clean:
 	@make -C minilibx_macos clean
 	@make -C minilibx-linux clean
 	@make -C libft clean
-	$(RM) ft_fdf.h
 	$(RM) $(OBJS)
 
 fclean: clean

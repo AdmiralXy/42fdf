@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:28 by                   #+#    #+#             */
-/*   Updated: 2021/09/03 15:27:52 by                  ###   ########.fr       */
+/*   Updated: 2021/09/03 15:59:34 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define WIN_WIDTH 720
 # define T_OFFSET 50
 # define T_HEIGHT 17
-# define T_COLOR 0xf00000
+# define T_COLOR 0xff9415
 
 // Keys
 
@@ -61,6 +61,8 @@
 	# define KEY_HEIGHT_PLUS 3
 	# define KEY_HEIGHT_MINUS 5
 #else
+	#error Platform not supported
+#endif
 
 // Structs
 
