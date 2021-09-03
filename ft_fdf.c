@@ -6,19 +6,25 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:21 by                   #+#    #+#             */
-/*   Updated: 2021/09/04 01:17:45 by                  ###   ########.fr       */
+/*   Updated: 2021/09/04 01:40:42 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fdf.h"
 
+int	ft_exit_button(t_fdf *data)
+{
+	mlx_clear_window(data->mlx, data->mlx_win);
+	mlx_destroy_window(data->mlx, data->mlx_win);
+	ft_clear_map(data->map, data);
+	free(data);
+	exit(0);
+}
+
 int	ft_key_mlx(int keycode, t_fdf *data)
 {
 	int	key_exists;
 
-	ft_putstr_fd("Key pressed: ", 1);
-	ft_putnbr_fd(keycode, 1);
-	ft_putendl_fd("", 1);
 	key_exists = ft_controls(keycode, data);
 	if (key_exists)
 		ft_draw(data, 1);
@@ -45,6 +51,7 @@ int	main(int argc, char **argv)
 	}
 	ft_draw(data, 0);
 	mlx_do_key_autorepeaton(data->mlx);
+	mlx_hook(data->mlx_win, 17, 1L << 17, ft_exit_button, data);
 	mlx_key_hook(data->mlx_win, ft_key_mlx, data);
 	mlx_loop(data->mlx);
 	return (0);
