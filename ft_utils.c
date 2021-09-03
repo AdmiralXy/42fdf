@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/03 15:13:44 by                   #+#    #+#             */
+/*   Updated: 2021/09/03 15:13:48 by                  ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_fdf.h"
 
 int	**ft_calloc_2d(int n_rows, int n_cols)
@@ -21,7 +33,7 @@ int	**ft_calloc_2d(int n_rows, int n_cols)
 	return (p);
 }
 
-void 	ft_clear_map(int **map, t_fdf *data)
+void	ft_clear_map(int **map, t_fdf *data)
 {
 	int	i;
 

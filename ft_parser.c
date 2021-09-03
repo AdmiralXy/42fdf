@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parser.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/09/03 15:13:34 by                   #+#    #+#             */
+/*   Updated: 2021/09/03 15:13:37 by                  ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_fdf.h"
 
 int	ft_valid_file(char *file_path)
@@ -56,7 +68,7 @@ int	ft_get_height(char *file_path)
 	return (counter);
 }
 
-void 	ft_line_to_numbers(int *array, char *line)
+void	ft_line_to_numbers(int *array, char *line)
 {
 	char	**str;
 	int		i;
