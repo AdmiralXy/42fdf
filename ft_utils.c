@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:44 by                   #+#    #+#             */
-/*   Updated: 2021/09/03 16:10:27 by                  ###   ########.fr       */
+/*   Updated: 2021/09/04 01:09:18 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_clear_map(int **map, t_fdf *data)
 int	ft_init_fdf(t_fdf *data)
 {
 	data->proj = 1;
-	data->scale = 22;
+	data->scale = (int) rintf(55 / rintf((float) data->width / 10));
 	data->angle = M_PI / 3;
 	data->shift_x = WIN_HEIGHT / 3;
 	data->shift_y = WIN_WIDTH / 3;
@@ -70,8 +70,12 @@ int	ft_get_line_color(t_point *p1, t_point *p2, t_fdf *data)
 
 	z1 = data->map[p1->y][p1->x];
 	z2 = data->map[p2->y][p2->x];
-	if (z1 || z2)
+	if (z1 > z2)
 		return (0xff0000);
+	if (z1 < z2)
+		return (0x0000ff);
+	if (z1 > 0)
+		return (0xff00ae);
 	return (0xffffff);
 }
 
