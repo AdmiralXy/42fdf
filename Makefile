@@ -38,12 +38,15 @@ all: $(NAME)
 
 clean:
 	@make -C minilibx_macos clean
+ifneq ($(UNAME), Darwin)
 	@make -C minilibx-linux clean
+endif
 	@make -C libft clean
 	$(RM) $(OBJS)
 
 fclean: clean
 	@make -C minilibx_macos clean
+	$(RM) minilibx-linux/libmlx.a
 	$(RM) minilibx-linux/libmlx_Linux.a
 	@make -C libft fclean
 	$(RM) $(NAME)
