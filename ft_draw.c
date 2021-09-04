@@ -81,5 +81,5 @@ void	ft_draw(t_fdf *data, int clear)
 		y++;
 	}
 	mlx_string_put(data->mlx, data->mlx_win, 50, 667, T_COLOR, "Loading: ");
-	mlx_string_put(data->mlx, data->mlx_win, 105, 667, T_COLOR, "completed");
+	mlx_string_put(data->mlx, data->mlx_win, 135, 667, T_COLOR, "completed");
 }
