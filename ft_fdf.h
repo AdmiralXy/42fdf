@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:28 by                   #+#    #+#             */
-/*   Updated: 2021/09/04 01:37:42 by                  ###   ########.fr       */
+/*   Updated: 2021/09/04 12:38:24 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@
 #  define KEY_SCALE_MINUS 7
 #  define KEY_HEIGHT_PLUS 3
 #  define KEY_HEIGHT_MINUS 5
+#  define KEY_PROJ_DEF 34
+#  define KEY_PROJ_ISO 35
 # else
 #  define KEY_UP 119
 #  define KEY_DOWN 115
