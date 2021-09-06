@@ -53,3 +53,5 @@ re: clean all
 norme:
 	norminette $(SRCS) ft_fdf.h
 	norminette libft/*.c libft/*.h
+
+bonus: $(NAME)
