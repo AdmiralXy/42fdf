@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:07 by                   #+#    #+#             */
-/*   Updated: 2021/09/04 01:30:10 by                  ###   ########.fr       */
+/*   Updated: 2021/09/06 14:07:25 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,23 @@
 
 void	ft_set_pixel(t_point point, int color, t_fdf *data)
 {
+	int	pixel;
+
+	if (point.y < WIN_WIDTH && point.x < WIN_HEIGHT)
+	{
+		pixel = (point.y * WIN_HEIGHT * 4) + (point.x * 4);
+		color = mlx_get_color_value(data->mlx, color);
+		if (point.x > 0 && pixel > 0
+			&& pixel < WIN_WIDTH * WIN_HEIGHT * (data->bpp / 8))
+		{
+			data->img_data[pixel + 0] = (char)((color) & 0xFF);
+			data->img_data[pixel + 1] = (char)((color >> 8) & 0xFF);
+			data->img_data[pixel + 2] = (char)((color >> 16) & 0xFF);
+			data->img_data[pixel + 3] = (char)((color >> 24));
+		}
+	}
 	if (!data->mlx)
 		ft_exit(data);
-	mlx_pixel_put(data->mlx, data->mlx_win, point.x, point.y, color);
 }
 
 t_point	ft_set_point(int x, int y)
@@ -63,10 +77,11 @@ void	ft_draw(t_fdf *data, int clear)
 	int		y;
 
 	if (clear)
+	{
 		mlx_clear_window(data->mlx, data->mlx_win);
-	ft_render_text(data);
+		ft_bzero(data->img_data, WIN_WIDTH * WIN_HEIGHT * (data->bpp / 8));
+	}
 	y = 0;
-	mlx_string_put(data->mlx, data->mlx_win, 50, 667, T_COLOR, "Loading: ");
 	while (y < data->height)
 	{
 		x = 0;
@@ -80,6 +95,6 @@ void	ft_draw(t_fdf *data, int clear)
 		}
 		y++;
 	}
-	mlx_string_put(data->mlx, data->mlx_win, 50, 667, T_COLOR, "Loading: ");
-	mlx_string_put(data->mlx, data->mlx_win, 135, 667, T_COLOR, "completed");
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->img_ptr, 0, 0);
+	ft_render_text(data);
 }

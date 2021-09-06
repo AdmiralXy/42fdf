@@ -12,26 +12,6 @@
 
 #include "ft_fdf.h"
 
-void	ft_print_2d(t_fdf *data)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < data->height)
-	{
-		j = 0;
-		while (j < data->width)
-		{
-			ft_putnbr_fd(data->map[i][j], 1);
-			ft_putstr_fd(" ", 1);
-			j++;
-		}
-		ft_putendl_fd("", 1);
-		i++;
-	}
-}
-
 int	ft_exit_button(t_fdf *data)
 {
 	mlx_clear_window(data->mlx, data->mlx_win);

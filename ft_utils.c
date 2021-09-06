@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:44 by                   #+#    #+#             */
-/*   Updated: 2021/09/06 12:45:28 by                  ###   ########.fr       */
+/*   Updated: 2021/09/06 13:51:50 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	ft_clear_map(int **map, t_fdf *data)
 
 void	ft_exit(t_fdf *data)
 {
+	mlx_destroy_image(data->mlx, data->img_ptr);
 	mlx_clear_window(data->mlx, data->mlx_win);
 	mlx_destroy_window(data->mlx, data->mlx_win);
 	ft_clear_map(data->map, data);
@@ -90,5 +91,11 @@ int	ft_init_fdf(t_fdf *data)
 	data->mlx_win = mlx_new_window(data->mlx, WIN_HEIGHT, WIN_WIDTH, "42FDF");
 	if (!data->mlx_win)
 		return (0);
+	data->bpp = 32;
+	data->size_line = WIN_HEIGHT * 4;
+	data->endian = 1;
+	data->img_ptr = mlx_new_image(data->mlx, WIN_HEIGHT, WIN_WIDTH);
+	data->img_data = mlx_get_data_addr(data->img_ptr, &data->bpp,
+			&data->size_line, &data->endian);
 	return (1);
 }

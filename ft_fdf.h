@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 12:50:22 by                   #+#    #+#             */
-/*   Updated: 2021/09/06 12:50:22 by                  ###   ########.fr       */
+/*   Updated: 2021/09/06 13:52:10 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_FDF_H
@@ -82,6 +82,11 @@ typedef struct s_fdf
 	int		shift_z;
 	void	*mlx;
 	void	*mlx_win;
+	int		bpp;
+	int		size_line;
+	int		endian;
+	void	*img_ptr;
+	char	*img_data;
 }	t_fdf;
 
 // Functions
@@ -96,6 +101,5 @@ int		**ft_calloc_2d(int n_rows, int n_cols);
 int		ft_get_line_color(t_point *p1, t_point *p2, t_fdf *data);
 void	ft_exit(t_fdf *data);
 void	ft_clear_map(int **map, t_fdf *data);
-void	ft_print_2d(t_fdf *data);
 
 #endif
