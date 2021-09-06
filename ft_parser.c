@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:34 by                   #+#    #+#             */
-/*   Updated: 2021/09/03 15:13:37 by                  ###   ########.fr       */
+/*   Updated: 2021/09/06 12:28:24 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int	ft_get_height(char *file_path)
 		counter++;
 		free(line);
 	}
-	counter++;
 	free(line);
 	close(fd);
 	return (counter);
@@ -109,5 +108,6 @@ int	ft_parser(char *file_path, t_fdf *data)
 	ft_line_to_numbers(data->map[i], line);
 	free(line);
 	close(fd);
+	ft_print_2d(data);
 	return (1);
 }
