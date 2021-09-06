@@ -6,11 +6,31 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:21 by                   #+#    #+#             */
-/*   Updated: 2021/09/04 01:40:42 by                  ###   ########.fr       */
+/*   Updated: 2021/09/06 12:45:36 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fdf.h"
+
+void	ft_print_2d(t_fdf *data)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < data->height)
+	{
+		j = 0;
+		while (j < data->width)
+		{
+			ft_putnbr_fd(data->map[i][j], 1);
+			ft_putstr_fd(" ", 1);
+			j++;
+		}
+		ft_putendl_fd("", 1);
+		i++;
+	}
+}
 
 int	ft_exit_button(t_fdf *data)
 {
