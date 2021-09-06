@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:44 by                   #+#    #+#             */
-/*   Updated: 2021/09/06 12:43:44 by                  ###   ########.fr       */
+/*   Updated: 2021/09/06 12:45:28 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_exit(t_fdf *data)
 int	ft_init_fdf(t_fdf *data)
 {
 	data->proj = 1;
-	if (data->width > 10)
+	if (data->width > 9)
 		data->scale = (int) rintf(55 / rintf((float) data->width / 10));
 	else
 		data->scale = 150;
