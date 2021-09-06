@@ -6,7 +6,7 @@
 /*   By: kricky <kricky@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 15:13:34 by                   #+#    #+#             */
-/*   Updated: 2021/09/06 12:28:24 by                  ###   ########.fr       */
+/*   Updated: 2021/09/06 12:54:37 by                  ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,6 @@ int	ft_parser(char *file_path, t_fdf *data)
 		free(line);
 		i++;
 	}
-	ft_line_to_numbers(data->map[i], line);
 	free(line);
 	close(fd);
 	ft_print_2d(data);
